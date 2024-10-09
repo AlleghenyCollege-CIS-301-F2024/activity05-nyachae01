@@ -1,6 +1,6 @@
 # Manova demo using Skulls dataset.
 
-# Add Your Name Here
+# Ethan Nyachae
 
 rm(list = ls()) # clear out the variables from memory to make a clean execution of the code.
 
@@ -63,4 +63,11 @@ ggplot(means_long, aes(x = epoch, y = mean_value, fill = measurement)) +
 # Add manova code below
 ##################################
 
-# TODO
+# 
+skulls_manova <- manova(cbind(mb, bh, bl, nh) ~ epoch, data = skulls)
+
+summary(skulls_manova)
+
+summary.aov(skulls_manova)
+
+
